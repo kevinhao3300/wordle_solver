@@ -3,7 +3,7 @@ from collections import Counter, defaultdict
 from string import ascii_lowercase
 
 
-with open('words.txt') as f:
+with open('small.txt') as f:
     words = f.read().split()
 
 
@@ -40,7 +40,7 @@ while True:
     for letter, (zeros, ones, twos) in label_counts.items():
         cur_min = ones + twos
         letter_min_max[letter][0] = cur_min
-        if zeros and cur_min:
+        if zeros:
             letter_min_max[letter][1] = cur_min
     new_words = []
     for word in words:
